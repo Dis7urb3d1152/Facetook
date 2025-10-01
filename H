@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facetook - Auction Your Face</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background: #2c2f33;
+      color: #fff;
+      padding: 20px;
+    }
+    nav {
+      margin: 15px 0;
+    }
+    nav a {
+      color: #61dafb;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .hero, .auction, .subscribe {
+      padding: 40px 20px;
+    }
+    .auction-box {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #countdown {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #d6336c;
+    }
+    #bids {
+      text-align: left;
+      margin: 15px 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      background: #2c2f33;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    footer {
+      background: #2c2f33;
+      color: #bbb;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Facetook</h1>
+    <p>Auction, Collect & Own Virtual Faces</p>
+    <nav>
+      <a href="#auction">Auction</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Facetook</h2>
+    <p>Every day, a live face auction is held where subscribers can sell virtual copies of their face. Collect, trade, and own faces from around the world!</p>
+  </section>
+
+  <section class="auction" id="auction">
+    <div class="auction-box">
+      <h3>Daily Face Auction</h3>
+      <p id="countdown">Auction ends in: --:--:--</p>
+      <div id="bids">
+        <p><strong>Latest Bids:</strong></p>
+      </div>
+      <button onclick="placeBid()">Place Bid</button>
+    </div>
+  </section>
+
+  <section class="subscribe" id="subscribe">
+    <h3>Become a Seller</h3>
+    <p>Subscribe for just <strong>$3.99/month</strong> to auction your own face.</p>
+    <button>Subscribe Now</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Facetook. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Auction Script -->
+  <script>
+    // Countdown Timer (24h reset)
+    function updateCountdown() {
+      const now = new Date();
+      const end = new Date();
+      end.setHours(23, 59, 59, 999);
+      if (now > end) {
+        end.setDate(end.getDate() + 1);
+      }
+      const diff = end - now;
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      document.getElementById('countdown').textContent = `Auction ends in: ${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Simple Bid Functionality (for demo)
+    let bidCount = 1;
+    function placeBid() {
+      const bidAmount = (Math.random() * 100 + 1).toFixed(2);
+      const bidDiv = document.getElementById('bids');
+      const p = document.createElement('p');
+      p.textContent = `#${bidCount++}: $${bidAmount} placed by User${Math.floor(Math.random()*1000)}`;
+      bidDiv.appendChild(p);
+      bidDiv.scrollTop = bidDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html>
