@@ -1,0 +1,322 @@
+<script async src="https://script.adquake.com/js/adquake.js" adquake-key="FQW0HD3Vlkiu2MuXaUVxAA=="></script>_adquake_domain_verification<script type="text/javascript">(function(a,b,c,d,e,f,g){a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};f=b.createElement(d);f.async=1;f.setAttribute("adquake-key",e);f.src="https://script.adquake.com/js/adquake.js";g=b.getElementsByTagName(d)[0];g.parentNode.insertBefore(f,g);})(window,document,"adquake","script","FQW0HD3Vlkiu2MuXaUVxAA==");</script>domain.com/adquake_domain_verification<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5N2FGZB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5N2FGZB');</script>
+<!-- End Google Tag Manager -->https://jubilant-system-v6j69j4grwr526q4j.github.dev/<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facetook - Auction Your Face</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background: #2c2f33;
+      color: #fff;
+      padding: 20px;
+    }
+    nav {
+      margin: 15px 0;
+    }
+    nav a {
+      color: #61dafb;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .hero, .auction, .subscribe {
+      padding: 40px 20px;
+    }
+    .auction-box {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #countdown {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #d6336c;
+    }
+    #bids {
+      text-align: left;
+      margin: 15px 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      background: #2c2f33;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    footer {
+      background: #2c2f33;
+      color: #bbb;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Facetook</h1>
+    <p>Auction, Collect & Own Virtual Faces</p>
+    <nav>
+      <a href="#auction">Auction</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Facetook</h2>
+    <p>Every day, a live face auction is held where subscribers can sell virtual copies of their face. Collect, trade, and own faces from around the world!</p>
+  </section>
+
+  <section class="auction" id="auction">
+    <div class="auction-box">
+      <h3>Daily Face Auction</h3>
+      <p id="countdown">Auction ends in: --:--:--</p>
+      <div id="bids">
+        <p><strong>Latest Bids:</strong></p>
+      </div>
+      <button onclick="placeBid()">Place Bid</button>
+    </div>
+  </section>
+
+  <section class="subscribe" id="subscribe">
+    <h3>Become a Seller</h3>
+    <p>Subscribe for just <strong>$3.99/month</strong> to auction your own face.</p>
+    <button>Subscribe Now</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Facetook. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Auction Script -->
+  <script>
+    // Countdown Timer (24h reset)
+    function updateCountdown() {
+      const now = new Date();
+      const end = new Date();
+      end.setHours(23, 59, 59, 999);
+      if (now > end) {
+        end.setDate(end.getDate() + 1);
+      }
+      const diff = end - now;
+      const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      document.getElementById('countdown').textContent = `Auction ends in: ${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Simple Bid Functionality (for demo)
+    let bidCount = 1;
+    function placeBid() {
+      const bidAmount = (Math.random() * 100 + 1).toFixed(2);
+      const bidDiv = document.getElementById('bids');
+      const p = document.createElement('p');
+      p.textContent = `#${bidCount++}: $${bidAmount} placed by User${Math.floor(Math.random()*1000)}`;
+      bidDiv.appendChild(p);
+      bidDiv.scrollTop = bidDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facetook - Auction Your Face</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background: #2c2f33;
+      color: #fff;
+      padding: 20px;
+    }
+    nav {
+      margin: 15px 0;
+    }
+    nav a {
+      color: #61dafb;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .hero, .auction, .subscribe {
+      padding: 40px 20px;
+    }
+    .auction-box {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #countdown {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #d6336c;
+    }
+    #bids {
+      text-align: left;
+      margin: 15px 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      background: #2c2f33;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    footer {
+      background: #2c2f33;
+      color: #bbb;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Facetook</h1>
+    <p>Auction, Collect & Own Virtual Faces</p>
+    <nav>
+      <a href="#auction">Auction</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Facetook</h2>
+    <p>Every day, a live face auction is held where subscribers can sell virtual copies of their face. Collect, trade, and own faces from around the world!</p>
+  </section>
+
+  <section class="auction" id="auction">
+    <div class="auction-box">
+      <h3>Daily Face Auction</h3>
+      <p id="countdown">Auction ends in: --:--:--</p>
+      <div id="bids">
+        <p><strong>Latest Bids:</strong></p>
+      </div>
+      <button onclick="placeBid()">Place Bid</button>
+    </div>
+  </section>
+
+  <section class="subscribe" id="subscribe">
+    <h3>Become a Seller</h3>
+    <p>Subscribe for just <strong>$3.99/month</strong> to auction your own face.</p>
+    <button>Subscribe Now</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Facetook. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Auction Script -->
+  <script>
+    // Countdown Timer (24h reset)
+    function updateCountdown() {
+      const now = new Date();
+      const end = new Date();
+      end.setHours(23, 59, 59, 999);
+      const diff =<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facetook</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #111; color: #eee; }
+    header { background: #0ff; color: #000; padding: 2rem; text-align: center; }
+    section { padding: 2rem; max-width: 800px; margin: auto; }
+    h2 { color: #0ff; }
+    a.button { display: inline-block; margin-top: 1rem; padding: 0.8rem 1.2rem; background: #0ff; color: #000; text-decoration: none; border-radius: 4px; }
+    form input, form textarea { width: 100%; margin-bottom: 1rem; padding: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Facetook</h1>
+    <p>Rent, buy, and sell faces online</p>
+    <a class="button" href="#auctions">Join the Auction</a>
+  </header>
+
+  <section>
+    <h2>About Facetook</h2>
+    <p>Facetook is a digital marketplace for face-based identity exchange. Whether you want to rent your face or trade digital facial rights, Facetook makes it possible through our unique weekly auctions.</p>
+  </section>
+
+  <section>
+    <h2>How It Works</h2>
+    <ul>
+      <li>Create your profile</li>
+      <li>Rent out your face or browse listings</li>
+      <li>Join weekly auctions</li>
+      <li>Pay $5/week via Cash App to <strong>$AbortedF3tus</strong> to sell</li>
+    </ul>
+  </section>
+
+  <section id="auctions">
+    <h2>Weekly Auctions</h2>
+    <p>Held every Saturday at 8 PM EST. Free to attend. Sellers must subscribe.</p>
+  </section>
+
+  <section>
+    <h2>Subscription Info</h2>
+    <p>To list faces in the weekly auction, a subscription of <strong>$5.00 USD</strong> is required.</p>
+    <p>Send payment via Cash App to: <strong>$AbortedF3tus</strong></p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Message" required></textarea>
+      <input type="submit" value="Send" />
+    </form>
+  </section>
+
+</body>
+</html>
